@@ -18,7 +18,8 @@
 
 
 
-Пункт.1
+Заданиe:
+
 1) уменьшить том под / до 8G
    Команды:
    
@@ -91,6 +92,7 @@ Reboot
 
 ![image](https://github.com/user-attachments/assets/71b1449c-2a1f-4055-a3ef-63c125091808)
 
+Следующие заданиe:
 
 3) выделить том под /var (/var - сделать в mirror)
 
@@ -153,6 +155,15 @@ mount /dev/VolGroup00/LogVol_Home /home/
 echo "/dev/disk/by-id/dm-name-VolGroup00-LogVol_Home /home xfs defaults 0 0" >> /etc/fstab
 
 ![image](https://github.com/user-attachments/assets/9a0f42a8-5939-4f61-a520-ebbd6ee621d8)
+
+
+Следующие задания:
+
+6) Работа со снапшотами:
+7) сгенерировать файлы в /home/
+8) снять снэпшот
+9) удалить часть файлов
+10) восстановиться со снэпшота
 
 
 
