@@ -129,11 +129,30 @@ reboot
 2) выделить том под /home
 4) для /home - сделать том для снэпшотов
 5) прописать монтирование в fstab (попробовать с разными опциями и разными файловыми системами на выбор)
-6) Работа со снапшотами:
-7) сгенерировать файлы в /home/
-8) снять снэпшот
-9) удалить часть файлов
-10) восстановиться со снэпшота
+
+
+
+
+lvcreate -n LogVol_Home -L 2G /dev/VolGroup00
+
+![image](https://github.com/user-attachments/assets/7590d31d-b251-407a-a4d7-4c32b9152f04)
+
+
+mkfs.xfs /dev/VolGroup00/LogVol_Home
+
+mount /dev/VolGroup00/LogVol_Home /mnt/
+
+cp -aR /home/* /mnt/
+
+rm -rf /home/*
+
+umount /mnt
+
+mount /dev/VolGroup00/LogVol_Home /home/
+
+echo "/dev/disk/by-id/dm-name-VolGroup00-LogVol_Home /home xfs defaults 0 0" >> /etc/fstab
+
+![image](https://github.com/user-attachments/assets/9a0f42a8-5939-4f61-a520-ebbd6ee621d8)
 
 
 
