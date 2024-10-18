@@ -189,7 +189,7 @@ ls  /home
 ![image](https://github.com/user-attachments/assets/c088a791-69b3-42a6-b1cb-6581ef96dd8e)
 
 
-# Итоговый вывод fstab и lsblk и lvs vgs pvs
+# Итоговый вывод fstab и lsblk и lvs vgs
 # 5) прописать монтирование в fstab (попробовать с разными опциями и разными файловыми системами на выбор)
 
 ![image](https://github.com/user-attachments/assets/55817678-58bd-46f2-9a7c-e7853e63d622)
