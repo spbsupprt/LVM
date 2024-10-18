@@ -100,6 +100,9 @@ vgcreate vg_var /dev/sde /dev/sdf
 
 lvcreate -L 950M -m1 -n lv_var vg_var
 
+![image](https://github.com/user-attachments/assets/993cf248-deb5-4a48-9fa7-55983b800981)
+
+
 mkfs.ext4 /dev/vg_var/lv_var
 
 mount /dev/vg_var/lv_var /mnt
