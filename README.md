@@ -92,3 +92,46 @@ Reboot
 ![image](https://github.com/user-attachments/assets/71b1449c-2a1f-4055-a3ef-63c125091808)
 
 
+3) выделить том под /var (/var - сделать в mirror)
+
+pvcreate /dev/sde /dev/sdf
+
+vgcreate vg_var /dev/sde /dev/sdf
+
+lvcreate -L 950M -m1 -n lv_var vg_var
+
+mkfs.ext4 /dev/vg_var/lv_var
+
+mount /dev/vg_var/lv_var /mnt
+
+cp -aR /var/* /mnt/
+
+mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
+
+umount /mnt
+
+mount /dev/vg_var/lv_var /var
+
+echo "/dev/disk/by-id/dm-name-vg_var-lv_var /var ext4 defaults 0 0" >> /etc/fstab
+
+reboot
+
+Результат:
+
+![image](https://github.com/user-attachments/assets/7fb47695-26e1-495e-97ac-d3185cea98fb)
+
+
+Следующие задания:
+
+2) выделить том под /home
+4) для /home - сделать том для снэпшотов
+5) прописать монтирование в fstab (попробовать с разными опциями и разными файловыми системами на выбор)
+6) Работа со снапшотами:
+7) сгенерировать файлы в /home/
+8) снять снэпшот
+9) удалить часть файлов
+10) восстановиться со снэпшота
+
+
+
+
